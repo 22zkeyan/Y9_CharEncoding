@@ -35,18 +35,57 @@
                     break;
             }
         }
+        static void Th()
+        {
+            //convert CHAR_TO_CODE
+            Console.WriteLine(Convert.ToInt32('a'));
+            //convert CODE_TO_CHAR
+            Console.WriteLine(Convert.ToChar(65));
+            //convert CHAR_TO_CODE using a procedure
+            CHAR_TO_CODE_PROCEDURE(Convert.ToChar(Convert.ToInt32('a')));
+            //convert CODE_TO_CHAR using a procedure
+            CODE_TO_CHAR_PROCEDURE(Convert.ToInt32('a'));
+            //convert CHAR_TO_CODE using a function
+            Console.WriteLine(CHAR_TO_CODE_FUNCTION('a'));
+            //convert CODE_TO_CHAR using a function
+            Console.WriteLine(CODE_TO_CHAR_FUNCTION(65));
+
+            //Challenge 0: convert any input ASCII code to it's character and vice versa
+
+            //Challenge 1: output the ASCII codes for any string input
+
+            //Challenge 2: ouput the Character for any input character codes
+        }
+        static void CHAR_TO_CODE_PROCEDURE(char myCodeParam)
+        {
+            int code = Convert.ToInt32(myCodeParam);
+            Console.WriteLine(code);
+        }
+        static void CODE_TO_CHAR_PROCEDURE(int myCodeParam)
+        {
+            char ch = Convert.ToChar(myCodeParam);
+            Console.WriteLine(ch);
+        }
+        static int CHAR_TO_CODE_FUNCTION(int myCodeParam)
+        {
+            return Convert.ToInt32(myCodeParam);
+        }
+        static char CODE_TO_CHAR_FUNCTION(int myCodeParam)
+        {
+            return Convert.ToChar(myCodeParam);
+        }
         static void Thing()
         {
             Console.Write("Please enter an integer x: ");
-            int x = Convert.ToInt32(Console.ReadLine()!);
+            string x = Console.ReadLine()!;
             Console.Write("Please enter a second integer y: ");
-            int y = Convert.ToInt32(Console.ReadLine()!);
-            int z = x + y;
+            string y = Console.ReadLine()!;
+            string z = x + y;
             Console.WriteLine("x + y = " +z);
         }
         static void Main(string[] args)
         {
-            CharToCodeToChar();
+            Th();
         }
     }
 }
